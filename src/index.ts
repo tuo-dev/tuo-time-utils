@@ -1,4 +1,4 @@
-export const getDateKo = (myDate:Date, type?: 'full' | 'no-year' | 'no-date') => {
+const getDateKo = (myDate:Date, type?: 'full' | 'no-year' | 'no-date') => {
   const year = myDate.getFullYear();
   const month = (myDate.getMonth() + 1);
   const day = myDate.getDate();
@@ -11,13 +11,13 @@ export const getDateKo = (myDate:Date, type?: 'full' | 'no-year' | 'no-date') =>
   }
 };
 
-export const compareCurrentDate = (myDate:Date) => {
+const compareCurrentDate = (myDate:Date) => {
   const nowDate = new Date();
   if (getDateKo(nowDate) === getDateKo(myDate)) return true;
   else return false;
 };
 
-export const getWeek = (myDate:Date) => {
+const getWeek = (myDate:Date) => {
   const dateNow = myDate.getDate();
   
   const newDate = new Date(myDate);
@@ -28,7 +28,7 @@ export const getWeek = (myDate:Date) => {
   return Math.trunc(((dayWeek - 1) + dateNow) / 7) + 1;
 };
 
-export const dayTranslateKo = (day: number) => {
+const dayTranslateKo = (day: number) => {
   switch (day) {
   case 0: return '일';
   case 1: return '월';
@@ -41,7 +41,7 @@ export const dayTranslateKo = (day: number) => {
 };
 
 
-export const getLastTimeKo = (time: number) => {
+const getLastTimeKo = (time: number) => {
   const nowDate = new Date().getTime();
   const timeDifference = nowDate - time;
   const agoStandard = timeDifference / (1000 * 60 * 60);
@@ -58,3 +58,5 @@ export const getLastTimeKo = (time: number) => {
     return `${agoDays}일 전`;
   }
 };
+
+export { getDateKo, compareCurrentDate, getWeek, dayTranslateKo, getLastTimeKo }

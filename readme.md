@@ -1,5 +1,5 @@
 # tuo-time-utils
-Utils related to time and date
+Utils related to time and date (esm)
 
 ## Usage
 
@@ -30,8 +30,6 @@ day of the week in Korean
 dayTranslateKo(day: Date.getDay())
 return '일' | '월' | '화' | '수' | '목' | '금' | '토'
 ```
-
-
 
 ### getLastTimeKo
 last time in Korean

@@ -41,22 +41,17 @@ const dayTranslateKo = (day: number) => {
 };
 
 
-const getLastTimeKo = (time: number) => {
+const getPassedTimeKo = (time: number) => {
   const nowDate = new Date().getTime();
   const timeDifference = nowDate - time;
-  const agoStandard = timeDifference / (1000 * 60 * 60);
-  const agoMins = Math.floor(timeDifference / (1000 * 60));
-  const agoTimes = Math.floor(timeDifference / (1000 * 60 * 60));
-  const agoDays = Math.floor(agoTimes / 24);
-  if (agoStandard < 1 / 60) {
-    return '방금 전';
-  } else if (agoStandard < 1) {
-    return `${agoMins}분 전`;
-  } else if (agoStandard < 24) {
-    return `${agoTimes}시간 전`;
-  } else if (agoStandard >= 24) {
-    return `${agoDays}일 전`;
-  }
+  const passedSec = timeDifference / 1000;
+  const passedMin = timeDifference / (1000 * 60);
+  const passedTime = timeDifference / (1000 * 60 * 60);
+  const passedDay = passedTime / 24;
+  if (passedSec < 60) return '방금 전'
+  else if (passedMin < 60) return `${Math.floor(passedMin)}분 전`
+  else if (passedTime < 24) return `${Math.floor(passedTime)}시간 전`
+  else return `${Math.floor(passedDay)}일 전`
 };
 
-export { getDateKo, compareCurrentDate, getWeek, dayTranslateKo, getLastTimeKo }
+export { getDateKo, compareCurrentDate, getWeek, dayTranslateKo, getPassedTimeKo }

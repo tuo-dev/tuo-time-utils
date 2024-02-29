@@ -31,9 +31,9 @@ dayTranslateKo(day: Date.getDay())
 return '일' | '월' | '화' | '수' | '목' | '금' | '토'
 ```
 
-### getLastTimeKo
+### getPassedTimeKo
 last time in Korean
 ```
-getLastTimeKo(time: Date.getTime())
+getPassedTimeKo(time: Date.getTime())
 return '방금 전' | 'n분 전' | 'n시간 전' | n일 전
 ```

@@ -49,9 +49,9 @@ const getPassedTimeKo = (time: number) => {
   const passedTime = timeDifference / (1000 * 60 * 60);
   const passedDay = passedTime / 24;
   if (passedSec < 60) return '방금 전'
-  else if (passedMin < 60) return `${Math.floor(passedMin)}분 전`
-  else if (passedTime < 24) return `${Math.floor(passedTime)}시간 전`
-  else return `${Math.floor(passedDay)}일 전`
+  else if (passedMin < 60) return `${Math.trunc(passedMin)}분 전`
+  else if (passedTime < 24) return `${Math.trunc(passedTime)}시간 전`
+  else return `${Math.trunc(passedDay)}일 전`
 };
 
 export { getDateKo, compareCurrentDate, getWeek, dayTranslateKo, getPassedTimeKo }

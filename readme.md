@@ -17,6 +17,13 @@ compareCurrentDate(date: Date)
 return boolean
 ```
 
+### compareDate
+compare to date without time
+```
+compareDate(first: Date, sec: Date)
+return boolean
+```
+
 ### getWeek
 check what week it is
 ```
@@ -30,6 +37,14 @@ day of the week in Korean
 dayTranslateKo(day: Date.getDay())
 return '일' | '월' | '화' | '수' | '목' | '금' | '토'
 ```
+
+### secToFullFormat
+convert seconds to yy:mm format
+```
+secToFullFormat(sec: number)
+return 'yy:mm'
+```
+
 
 ### getPassedTimeKo
 last time in Korean

@@ -17,6 +17,11 @@ const compareCurrentDate = (myDate:Date) => {
   else return false;
 };
 
+const compareDate = (first: Date, sec: Date) => {
+  if (getDateKo(first) === getDateKo(sec)) return true;
+  else return false;
+}
+
 const getWeek = (myDate:Date) => {
   const dateNow = myDate.getDate();
   
@@ -40,6 +45,12 @@ const dayTranslateKo = (day: number) => {
   }
 };
 
+const secToFullFormat = (sec: number) => {
+  const newSec = sec % 60 < 10 ? '0' + sec % 60 : sec % 60;
+  const newMinute = Math.floor(sec / 60) % 60 < 10 ? '0' + Math.floor(sec / 60) % 60 : Math.floor(sec / 60) % 60;
+
+  return `${newMinute}:${newSec}`;
+};
 
 const getPassedTimeKo = (time: number) => {
   const nowDate = new Date().getTime();
@@ -54,4 +65,4 @@ const getPassedTimeKo = (time: number) => {
   else return `${Math.trunc(passedDay)}일 전`
 };
 
-export { getDateKo, compareCurrentDate, getWeek, dayTranslateKo, getPassedTimeKo }
+export { getDateKo, compareCurrentDate, compareDate, getWeek, dayTranslateKo, secToFullFormat, getPassedTimeKo }

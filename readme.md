@@ -39,10 +39,10 @@ return '일' | '월' | '화' | '수' | '목' | '금' | '토'
 ```
 
 ### secToFullFormat
-convert seconds to yy:mm format
+convert seconds to mm:ss format
 ```
 secToFullFormat(sec: number)
-return 'yy:mm'
+return 'mm:ss'
 ```
 
 

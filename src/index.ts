@@ -13,14 +13,21 @@ const getDateKo = (myDate:Date, type?: 'full' | 'no-year' | 'no-date') => {
 
 const compareCurrentDate = (myDate:Date) => {
   const nowDate = new Date();
-  if (getDateKo(nowDate) === getDateKo(myDate)) return true;
-  else return false;
+  return (
+    myDate.getFullYear() === nowDate.getFullYear() &&
+    myDate.getMonth() === nowDate.getMonth() &&
+    myDate.getDate() === nowDate.getDate()
+  )
 };
 
 const compareDate = (first: Date, sec: Date) => {
-  if (getDateKo(first) === getDateKo(sec)) return true;
-  else return false;
-}
+  return (
+    first.getFullYear() === sec.getFullYear() &&
+    first.getMonth() === sec.getMonth() &&
+    first.getDate() === sec.getDate()
+  )
+};
+
 
 const getWeek = (myDate:Date) => {
   const dateNow = myDate.getDate();
